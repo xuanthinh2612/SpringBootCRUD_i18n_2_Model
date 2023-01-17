@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List product</title>
+</head>
+<body>
+<h1>List product</h1>
+
+<table>
+    <tr>
+        <td th:text="#{name}"></td>
+        <td th:text="#{description}"></td>
+        <td th:text="#{price}"></td>
+        <td th:text="#{category}"></td>
+        <td th:text="#{image}"></td>
+    </tr>
+    <tr th:each="c: ${productList}">
+        <td th:text="${c.getName()}"></td>
+        <td th:text="${c.getDescription()}"></td>
+        <td th:text="${c.getPrice()}"></td>
+        <td th:text="${c.getCategory().getCategoryName()}"></td>
+        <td>
+            <img th:src="${c.getImageURL()}" style="height: 200px; margin: 50px">
+        </td>
+    </tr>
+</table>
+
+<a th:href="@{/home}">Back to home</a>
+<br>
+<a th:href="@{/product/new}"> Create Product</a>
+</body>
+</html>

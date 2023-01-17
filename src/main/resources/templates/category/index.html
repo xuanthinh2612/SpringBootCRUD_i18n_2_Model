@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Category list</title>
+</head>
+<body>
+<h1>Category List</h1>
+<table>
+    <tr>
+        <td>Name</td>
+        <td>Description</td>
+    </tr>
+    <tr th:each="c: ${categoryList}">
+        <td th:text="${c.getCategoryName()}"></td>
+        <td th:text="${c.getDescription()}"></td>
+    </tr>
+</table>
+
+<a th:href="@{/category/new-category}"> Create new </a>
+<a th:href="@{/home}"> Back to Home </a>
+</body>
+</html>
